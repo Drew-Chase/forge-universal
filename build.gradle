@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+// Change java version to 17
+sourceCompatibility = 17
+targetCompatibility = 17
+
+group = 'chase.minecraft.forge'
+version = '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'chase.minecraft.forge.Main'
+        )
+    }
+}
+
